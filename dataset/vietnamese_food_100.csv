@@ -1,0 +1,101 @@
+product_id,product_group,product_category,product_type,product,product_description,unit_of_measure,current_wholesale_price,current_retail_price,tax_exempt_yn,promo_yn,new_product_yn
+1,Snacks,Banh,Banh,Banh Khot,Mini savory pancakes with shrimp and scallions.,5 pieces,4.31,$6.46,Y,N,N
+2,Traditional Dishes,Noodles,Bun,Bun Cha,Grilled pork meatballs with vermicelli and dipping sauce.,1 bowl,5.12,$7.68,N,N,N
+3,Traditional Dishes,Seafood,Goi,Goi Cuon,"Fresh spring rolls with shrimp, pork, and vegetables.",2 rolls,3.8,$5.70,N,Y,N
+4,Desserts,Smoothie,Sinh To,Sinh To Bo,Avocado smoothie blended with condensed milk.,1 cup,1.59,$2.39,N,N,N
+5,Street Food,Banh,Banh,Banh Trang Nuong,Vietnamese grilled rice paper topped with egg and pork.,1 piece,3.33,$5.00,Y,N,N
+6,Beverages,Juice,Nuoc Chanh,Nuoc Chanh,Homemade lemonade with fresh lime juice.,1 glass,2.71,$4.06,Y,N,Y
+7,Street Food,Rice Cake,Banh,Banh Xeo,"Vietnamese crispy pancake filled with shrimp, pork, and bean sprouts.",1 pancake,3.49,$5.24,N,N,Y
+8,Desserts,Sweet Soup,Che,Che Ba Mau,"A three-color dessert with red beans, mung beans, and coconut milk.",1 cup,2.54,$3.81,N,Y,N
+9,Snacks,Salad,Goi,Goi Ga,Vietnamese chicken salad with herbs and peanuts.,1 bowl,2.23,$3.34,N,Y,N
+10,Desserts,Frozen,Kem,Kem Xoi,Sticky rice with ice cream and crushed peanuts.,1 serving,2.61,$3.92,N,Y,N
+11,Beverages,Coffee,Ca Phe,Ca Phe Sua Da,Vietnamese iced coffee with condensed milk.,1 cup,1.03,$1.54,N,Y,N
+12,Street Food,Banh,Banh,Banh Trang Nuong,Vietnamese grilled rice paper topped with egg and pork.,1 piece,2.17,$3.25,N,N,N
+13,Snacks,Salad,Goi,Goi Ga,Vietnamese chicken salad with herbs and peanuts.,1 bowl,4.49,$6.74,Y,Y,N
+14,Traditional Dishes,Noodles,Hu Tieu,Hu Tieu Nam Vang,A sweet and savory noodle soup from the Mekong Delta.,1 bowl,4.2,$6.30,N,Y,N
+15,Street Food,Xoi,Xoi,Xoi Ga,Sticky rice with chicken and herbs.,1 plate,3.48,$5.22,Y,N,Y
+16,Traditional Dishes,Noodles,Pho,Pho Ga,"A Vietnamese soup with chicken, rice noodles, and herbs.",1 bowl,3.07,$4.60,N,Y,Y
+17,Traditional Dishes,Noodles,Pho,Pho Ga,"A Vietnamese soup with chicken, rice noodles, and herbs.",1 bowl,3.24,$4.86,N,N,N
+18,Traditional Dishes,Noodles,Pho,Pho Ga,"A Vietnamese soup with chicken, rice noodles, and herbs.",1 bowl,5.52,$8.28,N,Y,N
+19,Beverages,Coffee,Ca Phe,Ca Phe Sua Da,Vietnamese iced coffee with condensed milk.,1 cup,2.74,$4.11,N,Y,Y
+20,Traditional Dishes,Noodles,Bun,Bun Rieu,Crab and tomato noodle soup with a tangy broth.,1 bowl,4.69,$7.04,N,Y,Y
+21,Street Food,Sandwich,Banh Mi,Banh Mi Thit,"Vietnamese baguette sandwich with pork, pâté, and vegetables.",1 sandwich,2.94,$4.41,Y,N,Y
+22,Street Food,Sandwich,Banh Mi,Banh Mi Thit,"Vietnamese baguette sandwich with pork, pâté, and vegetables.",1 sandwich,2.51,$3.76,N,N,N
+23,Traditional Dishes,Noodles,Bun,Bun Rieu,Crab and tomato noodle soup with a tangy broth.,1 bowl,5.53,$8.29,Y,N,Y
+24,Street Food,Banh,Banh,Banh Trang Nuong,Vietnamese grilled rice paper topped with egg and pork.,1 piece,1.55,$2.33,N,N,N
+25,Desserts,Pastry,Banh,Banh Pia,Flaky pastry filled with mung bean paste and durian.,1 piece,3.21,$4.81,N,Y,N
+26,Desserts,Sweet Soup,Che,Che Ba Mau,"A three-color dessert with red beans, mung beans, and coconut milk.",1 cup,1.65,$2.47,N,N,N
+27,Desserts,Pastry,Banh,Banh Pia,Flaky pastry filled with mung bean paste and durian.,1 piece,3.26,$4.89,N,Y,Y
+28,Street Food,Xoi,Xoi,Xoi Ga,Sticky rice with chicken and herbs.,1 plate,2.89,$4.33,Y,Y,N
+29,Street Food,Bun,Bun,Bun Dau Mam Tom,Fermented shrimp paste served with tofu and herbs.,1 set,1.74,$2.61,N,Y,N
+30,Traditional Dishes,Noodles,Bun,Bun Thit Nuong,"Grilled pork with rice vermicelli, fresh herbs, and peanuts.",1 bowl,3.09,$4.63,Y,N,N
+31,Traditional Dishes,Rice,Com,Com Ga,Chicken rice served with a side of pickled vegetables.,1 plate,3.36,$5.04,N,N,Y
+32,Beverages,Juice,Nuoc Mia,Nuoc Mia,Fresh sugarcane juice served over ice.,1 glass,2.35,$3.53,Y,N,N
+33,Street Food,Skewers,Nem,Nem Nuong,Grilled pork skewers with a side of fresh vegetables.,3 skewers,2.55,$3.82,N,Y,Y
+34,Traditional Dishes,Noodles,Pho,Pho Ga,"A Vietnamese soup with chicken, rice noodles, and herbs.",1 bowl,4.68,$7.02,Y,Y,N
+35,Desserts,Pastry,Banh,Banh Pia,Flaky pastry filled with mung bean paste and durian.,1 piece,1.7,$2.55,Y,Y,N
+36,Snacks,Salad,Goi,Goi Ga,Vietnamese chicken salad with herbs and peanuts.,1 bowl,2.6,$3.90,N,Y,Y
+37,Snacks,Grilled,Bo Nuong La Lot,Bo Nuong La Lot,Grilled beef wrapped in betel leaves.,1 skewer,4.84,$7.26,Y,N,N
+38,Traditional Dishes,Noodles,Hu Tieu,Hu Tieu Nam Vang,A sweet and savory noodle soup from the Mekong Delta.,1 bowl,5.24,$7.86,Y,Y,N
+39,Beverages,Smoothie,Sinh To,Sinh To Xoai,Mango smoothie with ice and condensed milk.,1 cup,1.12,$1.68,N,N,Y
+40,Street Food,Bun,Bun,Bun Oc,Snail noodle soup with tomato broth.,1 bowl,3.47,$5.21,Y,Y,Y
+41,Desserts,Sweet Soup,Che,Che Troi Nuoc,Sticky rice balls in sweet ginger syrup.,1 cup,3.21,$4.81,N,N,Y
+42,Traditional Dishes,Noodles,Hu Tieu,Hu Tieu Nam Vang,A sweet and savory noodle soup from the Mekong Delta.,1 bowl,4.97,$7.46,Y,Y,N
+43,Snacks,Salad,Goi,Goi Ga,Vietnamese chicken salad with herbs and peanuts.,1 bowl,4.54,$6.81,Y,Y,N
+44,Traditional Dishes,Noodles,Hu Tieu,Hu Tieu Nam Vang,A sweet and savory noodle soup from the Mekong Delta.,1 bowl,3.65,$5.47,N,Y,N
+45,Snacks,Banh,Banh,Banh Khot,Mini savory pancakes with shrimp and scallions.,5 pieces,3.63,$5.45,N,N,Y
+46,Desserts,Sweet Soup,Che,Che Troi Nuoc,Sticky rice balls in sweet ginger syrup.,1 cup,3.02,$4.53,Y,Y,N
+47,Desserts,Frozen,Kem,Kem Xoi,Sticky rice with ice cream and crushed peanuts.,1 serving,2.43,$3.65,N,Y,N
+48,Beverages,Tea,Tra,Tra Da,"Vietnamese iced tea, often served for free.",1 cup,2.87,$4.30,Y,Y,N
+49,Street Food,Skewers,Nem,Nem Nuong,Grilled pork skewers with a side of fresh vegetables.,3 skewers,3.5,$5.25,N,N,N
+50,Street Food,Rice Cake,Banh,Banh Xeo,"Vietnamese crispy pancake filled with shrimp, pork, and bean sprouts.",1 pancake,3.14,$4.71,Y,Y,N
+51,Beverages,Smoothie,Sinh To,Sinh To Xoai,Mango smoothie with ice and condensed milk.,1 cup,1.82,$2.73,Y,N,N
+52,Street Food,Sandwich,Banh Mi,Banh Mi Cha Ca,"Vietnamese sandwich with fish cake, cucumber, and herbs.",1 sandwich,1.82,$2.73,N,Y,N
+53,Street Food,Bun,Bun,Bun Dau Mam Tom,Fermented shrimp paste served with tofu and herbs.,1 set,2.01,$3.01,N,N,N
+54,Desserts,Frozen,Kem,Kem Xoi,Sticky rice with ice cream and crushed peanuts.,1 serving,2.06,$3.09,Y,N,N
+55,Traditional Dishes,Noodles,Bun,Bun Cha,Grilled pork meatballs with vermicelli and dipping sauce.,1 bowl,5.54,$8.31,N,Y,Y
+56,Traditional Dishes,Noodles,Bun,Bun Rieu,Crab and tomato noodle soup with a tangy broth.,1 bowl,4.42,$6.63,Y,N,Y
+57,Beverages,Juice,Nuoc Chanh,Nuoc Chanh,Homemade lemonade with fresh lime juice.,1 glass,1.85,$2.78,Y,N,N
+58,Street Food,Bun,Bun,Bun Dau Mam Tom,Fermented shrimp paste served with tofu and herbs.,1 set,3.96,$5.94,N,Y,Y
+59,Street Food,Rice Cake,Banh,Banh Beo,Steamed rice cakes with shrimp flakes and scallion oil.,1 serving,2.65,$3.97,N,N,Y
+60,Traditional Dishes,Rice,Com,Com Tam,"Broken rice served with grilled pork, egg, and fish sauce.",1 plate,5.19,$7.79,N,N,N
+61,Street Food,Banh,Banh,Banh Trang Nuong,Vietnamese grilled rice paper topped with egg and pork.,1 piece,3.1,$4.65,Y,N,N
+62,Traditional Dishes,Noodles,Bun,Bun Rieu,Crab and tomato noodle soup with a tangy broth.,1 bowl,4.32,$6.48,Y,N,Y
+63,Snacks,Salad,Goi,Goi Ga,Vietnamese chicken salad with herbs and peanuts.,1 bowl,2.14,$3.21,N,Y,Y
+64,Street Food,Xoi,Xoi,Xoi Ga,Sticky rice with chicken and herbs.,1 plate,1.81,$2.71,Y,N,Y
+65,Traditional Dishes,Noodles,Hu Tieu,Hu Tieu Nam Vang,A sweet and savory noodle soup from the Mekong Delta.,1 bowl,4.42,$6.63,N,Y,N
+66,Beverages,Smoothie,Sinh To,Sinh To Xoai,Mango smoothie with ice and condensed milk.,1 cup,1.13,$1.69,N,Y,Y
+67,Street Food,Bun,Bun,Bun Dau Mam Tom,Fermented shrimp paste served with tofu and herbs.,1 set,2.94,$4.41,N,Y,N
+68,Snacks,Banh,Banh,Banh Khot,Mini savory pancakes with shrimp and scallions.,5 pieces,2.92,$4.38,N,Y,Y
+69,Beverages,Tea,Tra,Tra Da,"Vietnamese iced tea, often served for free.",1 cup,2.75,$4.12,Y,Y,N
+70,Traditional Dishes,Noodles,Hu Tieu,Hu Tieu Nam Vang,A sweet and savory noodle soup from the Mekong Delta.,1 bowl,5.88,$8.82,N,Y,Y
+71,Snacks,Banh,Banh,Banh Khot,Mini savory pancakes with shrimp and scallions.,5 pieces,3.31,$4.96,N,N,N
+72,Traditional Dishes,Noodles,Hu Tieu,Hu Tieu Nam Vang,A sweet and savory noodle soup from the Mekong Delta.,1 bowl,5.48,$8.22,Y,N,Y
+73,Street Food,Bun,Bun,Bun Oc,Snail noodle soup with tomato broth.,1 bowl,2.56,$3.84,Y,Y,N
+74,Beverages,Juice,Nuoc Chanh,Nuoc Chanh,Homemade lemonade with fresh lime juice.,1 glass,1.58,$2.37,N,N,Y
+75,Street Food,Bun,Bun,Bun Dau Mam Tom,Fermented shrimp paste served with tofu and herbs.,1 set,2.54,$3.81,Y,N,N
+76,Beverages,Smoothie,Sinh To,Sinh To Xoai,Mango smoothie with ice and condensed milk.,1 cup,2.66,$3.99,N,N,Y
+77,Street Food,Bun,Bun,Bun Dau Mam Tom,Fermented shrimp paste served with tofu and herbs.,1 set,2.27,$3.41,Y,Y,Y
+78,Street Food,Sandwich,Banh Mi,Banh Mi Thit,"Vietnamese baguette sandwich with pork, pâté, and vegetables.",1 sandwich,2.66,$3.99,N,Y,Y
+79,Street Food,Banh,Banh,Banh Trang Nuong,Vietnamese grilled rice paper topped with egg and pork.,1 piece,2.26,$3.39,Y,Y,N
+80,Beverages,Coffee,Ca Phe,Ca Phe Sua Da,Vietnamese iced coffee with condensed milk.,1 cup,2.04,$3.06,N,N,N
+81,Street Food,Rice Cake,Banh,Banh Xeo,"Vietnamese crispy pancake filled with shrimp, pork, and bean sprouts.",1 pancake,3.19,$4.79,Y,N,N
+82,Desserts,Frozen,Kem,Kem Xoi,Sticky rice with ice cream and crushed peanuts.,1 serving,2.46,$3.69,N,N,Y
+83,Snacks,Hot Pot,Lau,Lau Nam,Vietnamese hot pot with a mix of meats and vegetables.,1 serving,2.58,$3.87,Y,Y,Y
+84,Beverages,Juice,Nuoc Mia,Nuoc Mia,Fresh sugarcane juice served over ice.,1 glass,1.68,$2.52,Y,Y,Y
+85,Beverages,Juice,Nuoc Mia,Nuoc Mia,Fresh sugarcane juice served over ice.,1 glass,2.29,$3.44,Y,Y,Y
+86,Beverages,Smoothie,Sinh To,Sinh To Xoai,Mango smoothie with ice and condensed milk.,1 cup,1.84,$2.76,N,Y,Y
+87,Desserts,Sweet Soup,Che,Che Troi Nuoc,Sticky rice balls in sweet ginger syrup.,1 cup,3.42,$5.13,N,Y,N
+88,Street Food,Rice Cake,Banh,Banh Beo,Steamed rice cakes with shrimp flakes and scallion oil.,1 serving,1.74,$2.61,Y,N,Y
+89,Beverages,Juice,Nuoc Mia,Nuoc Mia,Fresh sugarcane juice served over ice.,1 glass,1.17,$1.75,N,Y,Y
+90,Traditional Dishes,Rice,Com,Com Ga,Chicken rice served with a side of pickled vegetables.,1 plate,5.21,$7.81,Y,N,Y
+91,Desserts,Frozen,Kem,Kem Xoi,Sticky rice with ice cream and crushed peanuts.,1 serving,1.86,$2.79,N,Y,Y
+92,Traditional Dishes,Seafood,Goi,Goi Cuon,"Fresh spring rolls with shrimp, pork, and vegetables.",2 rolls,3.99,$5.99,Y,Y,N
+93,Snacks,Salad,Goi,Goi Ga,Vietnamese chicken salad with herbs and peanuts.,1 bowl,2.56,$3.84,N,N,N
+94,Snacks,Salad,Goi,Goi Ga,Vietnamese chicken salad with herbs and peanuts.,1 bowl,3.22,$4.83,Y,Y,Y
+95,Traditional Dishes,Noodles,Bun,Bun Rieu,Crab and tomato noodle soup with a tangy broth.,1 bowl,4.18,$6.27,Y,N,Y
+96,Traditional Dishes,Rice,Com,Com Ga,Chicken rice served with a side of pickled vegetables.,1 plate,3.52,$5.28,N,N,N
+97,Traditional Dishes,Rice,Com,Com Tam,"Broken rice served with grilled pork, egg, and fish sauce.",1 plate,5.87,$8.80,N,N,N
+98,Traditional Dishes,Rice,Com,Com Tam,"Broken rice served with grilled pork, egg, and fish sauce.",1 plate,4.67,$7.00,N,N,N
+99,Beverages,Tea,Tra,Tra Da,"Vietnamese iced tea, often served for free.",1 cup,1.23,$1.84,Y,Y,N
+100,Traditional Dishes,Noodles,Hu Tieu,Hu Tieu Nam Vang,A sweet and savory noodle soup from the Mekong Delta.,1 bowl,4.49,$6.74,N,Y,Y
