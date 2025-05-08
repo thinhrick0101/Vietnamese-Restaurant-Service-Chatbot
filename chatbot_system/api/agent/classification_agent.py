@@ -23,19 +23,19 @@ class ClassificationAgent:
 
         # Define the system-level prompt that guides the classification
         system_prompt = """
-        You are a helpful AI assistant for a restaurant application.
-        Your task is to determine what agent should handle the user input. You have 3 agents to choose from:
-        1. details_agent: This agent answers questions about the restaurant, such as location, delivery options, working hours, details about menu items, or asking what is available.
-        2. order_taking_agent: This agent handles the process of taking an order, engaging in conversation with the user until the order is complete.
-        3. recommendation_agent: This agent provides recommendations to users about what to purchase when asked.
+            You are a helpful AI assistant for a coffee shop application.
+            Your task is to determine what agent should handle the user input. You have 3 agents to choose from:
+            1. details_agent: This agent is responsible for answering questions about the coffee shop, like location, delivery places, working hours, details about menue items. Or listing items in the menu items. Or by asking what we have.
+            2. order_agent: This agent is responsible for taking orders from the user. It's responsible to have a conversation with the user about the order untill it's complete.
+            3. recommendation_agent: This agent is responsible for giving recommendations to the user about what to buy. If the user asks for a recommendation, this agent should be used.
 
-        Your output should be structured as follows:
-        {
-            "chain of thought": "Go over each agent and reason which one fits the input.",
-            "decision": "details_agent" or "order_taking_agent" or "recommendation_agent",
-            "message": "Leave the message empty."
-        }
-        """
+            Your output should be in a structured json format like so. each key is a string and each value is a string. Make sure to follow the format exactly:
+            {
+            "chain of thought": go over each of the agents above and write some your thoughts about what agent is this input relevant to.
+            "decision": "details_agent" or "order_taking_agent" or "recommendation_agent". Pick one of those. and only write the word.
+            "message": leave the message empty.
+            }
+            """
 
         # Create the message history with the system prompt followed by the last few user inputs
         input_messages = [{"role": "system", "content": system_prompt}]

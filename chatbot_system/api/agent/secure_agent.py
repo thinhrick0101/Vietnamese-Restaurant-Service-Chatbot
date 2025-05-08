@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 import os
 import json
 from copy import deepcopy
-from .utils import get_chatbot_response
+from agent.utils import get_chatbot_response
 from openai import OpenAI
 
 # Load environment variables from the .env file
@@ -55,7 +55,7 @@ class SecureAgent:
             "{\n"
             '  "chain of thought": <your thought process>,\n'
             '  "decision": "allowed" or "not allowed",\n'
-            '  "message": "" (if allowed) or "Sorry, I can\'t help with that. Can I help you with your order?" (if not allowed)\n'
+            '  "message": "Sorry, I can\'t help with that. Can I help you with your order?" (if not allowed) or leave this blank/empty for allowed queries\n'
             "}\n"
         )
 
@@ -77,15 +77,32 @@ class SecureAgent:
         Returns:
             dict: Formatted response with role, content, and memory fields.
         """
-        parsed_output = json.loads(raw_output)
-
-        # Construct the final output dictionary with the expected keys and structure
-        formatted_output = {
-            "role": "assistant",
-            "content": parsed_output.get('message', ''),
-            "memory": {
-                "agent": "secure_agent",
-                "guard_decision": parsed_output.get('decision', '')
+        try:
+            # Print the raw output for debugging
+            print("Raw output from model:", raw_output)
+            
+            # Try to parse the JSON
+            parsed_output = json.loads(raw_output)
+            
+            # Construct the final output dictionary with the expected keys and structure
+            formatted_output = {
+                "role": "assistant",
+                "content": parsed_output.get('message', ''),
+                "memory": {
+                    "agent": "secure_agent",
+                    "guard_decision": parsed_output.get('decision', '')
+                }
             }
-        }
-        return formatted_output
+            return formatted_output
+        except json.JSONDecodeError as e:
+            print(f"JSON decode error: {e}")
+            # Fallback response for when JSON parsing fails
+            return {
+                "role": "assistant",
+                "content": "Sorry, I encountered an error processing your request.",
+                "memory": {
+                    "agent": "secure_agent",
+                    "guard_decision": "error",
+                    "error": str(e)
+                }
+            }

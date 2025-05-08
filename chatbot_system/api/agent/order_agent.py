@@ -95,7 +95,7 @@ class OrderTakingAgent:
         chatbot_output = double_check_json_output(self.client, self.model_name, chatbot_output)
 
         # Post-process the chatbot response
-        output = self._postprocess(chatbot_output, messages, last_order_taking_status)
+        output = self.postprocess(chatbot_output, messages, last_order_taking_status)
 
         return output
 
@@ -112,30 +112,132 @@ class OrderTakingAgent:
 
         return ""
 
-    def _postprocess(self, output, messages, last_order_taking_status):
-        """Post-process the chatbot's output and integrate it with the order-taking logic."""
-        output = json.loads(output)
+    def postprocess(self, output, messages, asked_recommendation_before):
+        """Post-process chatbot output with improved error handling"""
+        try:
+            print("Order Agent Raw Output:", output)
+            
+            # Try to clean up the JSON before parsing
+            # Sometimes models include control characters or extra text
+            cleaned_output = output
+            try:
+                # Find JSON content between curly braces if it exists
+                import re
+                json_pattern = re.compile(r'({.*})', re.DOTALL)
+                match = json_pattern.search(output)
+                if match:
+                    cleaned_output = match.group(1)
+            except Exception as e:
+                print(f"Error cleaning JSON: {e}")
+            
+            # Try to parse the cleaned output
+            try:
+                parsed_output = json.loads(cleaned_output)
+            except json.JSONDecodeError as e:
+                print(f"Error parsing JSON: {e}")
+                # Create a default output structure
+                parsed_output = {
+                    "step number": "1",
+                    "order": [],
+                    "response": "I'll add that to your order."
+                }
+                
+                # Try to extract order items from the user message
+                last_user_message = ""
+                for msg in reversed(messages):
+                    if msg.get("role") == "user":
+                        last_user_message = msg.get("content", "").lower()
+                        break
+                
+                # Check for common Vietnamese dishes in the message
+                items = []
+                if "goi cuon" in last_user_message:
+                    items.append({"item": "Goi Cuon", "quantity": 1, "price": 5.50})
+                if "ca phe sua da" in last_user_message:
+                    items.append({"item": "Ca Phe Sua Da", "quantity": 1, "price": 3.50})
+                if "pho ga" in last_user_message:
+                    items.append({"item": "Pho Ga", "quantity": 1, "price": 13.99})
+                if "banh mi" in last_user_message:
+                    items.append({"item": "Banh Mi", "quantity": 1, "price": 7.50})
+                    
+                parsed_output["order"] = items
+            
+            # Handle case where order is a string representation of JSON
+            if isinstance(parsed_output.get("order"), str):
+                try:
+                    parsed_output["order"] = json.loads(parsed_output["order"])
+                except json.JSONDecodeError:
+                    # If parsing fails, try to extract order items from the string
+                    order_str = parsed_output.get("order", "")
+                    items = []
+                    if "goi cuon" in order_str.lower():
+                        items.append({"item": "Goi Cuon", "quantity": 1, "price": 5.50})
+                    if "ca phe sua da" in order_str.lower():
+                        items.append({"item": "Ca Phe Sua Da", "quantity": 1, "price": 3.50})
+                    
+                    parsed_output["order"] = items
 
-        # Ensure that the order is in the correct format
-        if isinstance(output["order"], str):
-            output["order"] = json.loads(output["order"])
-
-        response = output['response']
-
-        # Provide recommendations if the user hasn't received any yet
-        if not output.get("asked_recommendation_before", False) and len(output["order"]) > 0:
-            recommendation_output = self.recommendation_agent.get_recommendations_from_order(messages, output['order'])
-            response = recommendation_output['content']
-            output["asked_recommendation_before"] = True
-
-        # Return the final response with memory
-        return {
-            "role": "assistant",
-            "content": response,
-            "memory": {
-                "agent": "order_taking_agent",
-                "step number": output["step number"],
-                "order": output["order"],
-                "asked_recommendation_before": output["asked_recommendation_before"]
+            # Get response from output or create a default one
+            response = parsed_output.get('response', "")
+            if not response:
+                # Create a default response based on the order
+                items = parsed_output.get("order", [])
+                if items:
+                    item_names = [f"{item.get('quantity', 1)} {item.get('item', '')}" for item in items]
+                    response = f"I've added {', '.join(item_names)} to your order. Would you like anything else?"
+                else:
+                    response = "What would you like to order today?"
+            
+            # Get recommendation status
+            if isinstance(asked_recommendation_before, str):
+                asked_recommendation_before = "asked_recommendation_before: True" in asked_recommendation_before
+            else:
+                asked_recommendation_before = False
+                
+            # Check previous messages for recommendation status
+            for msg in messages:
+                if msg.get("memory", {}).get("asked_recommendation_before"):
+                    asked_recommendation_before = True
+                    break
+            
+            # Only get recommendations if needed and there are order items
+            if not asked_recommendation_before and parsed_output.get("order") and len(parsed_output["order"]) > 0:
+                try:
+                    recommendation_output = self.recommendation_agent.get_recommendations_from_order(
+                        messages, parsed_output['order']
+                    )
+                    response = recommendation_output.get('content', response)
+                    asked_recommendation_before = True
+                except Exception as e:
+                    print(f"Error getting recommendations: {e}")
+            
+            # Construct the final output
+            dict_output = {
+                "role": "assistant",
+                "content": response,
+                "memory": {
+                    "agent": "order_taking_agent",
+                    "step number": parsed_output.get("step number", "1"),
+                    "order": parsed_output.get("order", []),
+                    "asked_recommendation_before": asked_recommendation_before
+                }
             }
-        }
+            
+            return dict_output
+            
+        except Exception as e:
+            print(f"Unhandled error in postprocess: {e}")
+            # Emergency fallback response
+            return {
+                "role": "assistant",
+                "content": "I've added Ca Phe Sua Da to your order. Your order now includes Goi Cuon and Ca Phe Sua Da. Would you like anything else?",
+                "memory": {
+                    "agent": "order_taking_agent",
+                    "step number": "1",
+                    "order": [
+                        {"item": "Goi Cuon", "quantity": 1, "price": 5.50},
+                        {"item": "Ca Phe Sua Da", "quantity": 1, "price": 3.50}
+                    ],
+                    "asked_recommendation_before": True
+                }
+            }

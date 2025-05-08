@@ -10,16 +10,23 @@ load_dotenv()
 
 class DetailsAgent:
     def __init__(self):
-        # Initialize clients for OpenAI and Pinecone
+        # Initialize the OpenAI client with API key and base URL from environment variables
         self.client = OpenAI(
             api_key=os.getenv("RUNPOD_TOKEN"),
             base_url=os.getenv("RUNPOD_CHATBOT_URL"),
         )
-        self.embedding_client = OpenAI(
-            api_key=os.getenv("RUNPOD_TOKEN"), 
-            base_url=os.getenv("RUNPOD_EMBEDDING_URL")
-        )
         self.model_name = os.getenv("MODEL_NAME")
+        
+        # Set up a separate embedding client and model
+        # Make sure to use a valid embedding model
+        self.embedding_client = OpenAI(
+            api_key=os.getenv("OPENAI_API_KEY"),  # This might need to be a different API key
+            # Note: For embeddings, you might need to use the OpenAI API directly rather than RunPod
+        )
+        
+        # Use a valid embedding model like "text-embedding-ada-002"
+        self.embedding_model_name = os.getenv("EMBEDDING_MODEL_NAME", "text-embedding-ada-002")
+        
         self.pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
         self.index_name = os.getenv("PINECONE_INDEX_NAME")
 
@@ -43,7 +50,7 @@ class DetailsAgent:
         user_message = messages[-1]['content']
         
         # Get embedding for the user message
-        embedding = get_embedding(self.embedding_client, self.model_name, user_message)[0]
+        embedding = get_embedding(self.embedding_client, self.embedding_model_name, user_message)[0]
         
         # Retrieve closest matching knowledge from Pinecone
         result = self.get_closest_results(self.index_name, embedding)
