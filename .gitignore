@@ -1,7 +1,7 @@
 # Environment variables
 .env
 .env.*
-*.env
+!.env.example
 
 # Python
 __pycache__/
@@ -54,10 +54,33 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Local data
+# React Native / Expo
+node_modules/
+.expo/
+.expo-shared/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+web-report/
+.DS_Store
+
+# Allow JSON files for React Native configs and data
+!package.json
+!package-lock.json
+!app.json
+!babel.config.js
+!metro.config.js
+!/app/chatbot/app/*.json
+!/app/chatbot/assets/data/*.json
+
+# Local data (exclude data directory except for needed files)
 data/
 *.csv
-*.json
 *.db
 *.sqlite
 *.sqlite3
@@ -74,7 +97,6 @@ data/
 *.tmp
 *.swp
 *.swo
-.DS_Store
 Thumbs.db
 
 # Sensitive information and keys
@@ -85,6 +107,8 @@ token.json
 *_keys.json
 service-account*.json
 firebase-*.json
+# Except example configuration files
+!firebase-config.example.json 
 
 # RunPod specific
 runpod_logs/
